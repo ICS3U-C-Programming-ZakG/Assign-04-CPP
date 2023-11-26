@@ -2,7 +2,7 @@
 //
 // Created by: Zak Goneau
 // Date Created: Nov. 24, 2023
-// This program finds the lowest common multiple of two numbers.
+// This program finds the lowest common multiple of two positive integers.
 
 #include <iostream>
 #include <string>
@@ -10,12 +10,11 @@
 int main() {
     // introduce program to user
     std::cout << "Hello, this program takes two positive integers ";
-    std::cout << "and will find the lowest common multiple";
+    std::cout << "and will find the lowest common multiple ";
     std::cout << "and display the result.\n ";
 
-        // declare variables
-        std::string userNumOneStr,
-        userNumTwoStr;
+    // declare variables
+    std::string userNumOneStr, userNumTwoStr;
     int userNumOneInt, userNumTwoInt, higher, value;
     float userNumOneFloat, userNumTwoFloat;
 
@@ -54,20 +53,20 @@ int main() {
                     // assign first inputs value to the variable "higher"
                     higher = userNumOneInt;
 
-                    // assign value of higher to variable value
+                    // assign value of "higher" to variable "value"
                     value = higher;
 
-                    // assign second inputs value to the variable "higher"
+                    // else assign second inputs "value" to the variable "higher"
                 } else {
                     higher = userNumTwoInt;
 
-                    // assign value of higher to variable value
+                    // assign value of "higher" to variable "value"
                     value = higher;
 
                 // do while loop
                 } do {
 
-                    // check if higher mod both inputs equals zero
+                    // check if "higher" mod both inputs equals zero
                     if (higher % userNumOneInt == 0 && higher % userNumTwoInt == 0) {
 
                         // display lowest common multiple
@@ -78,15 +77,15 @@ int main() {
                         // break out of the loop
                         break;
 
-                    // increase value of higher with higher plus value
+                    // increase value of "higher" with "higher" plus "value"
                     } else {
                         higher = higher + value;
                     }
 
-                    // loop as long as higher mod both inputs is not zero
-                } while (higher % userNumOneInt != 0 && higher % userNumTwoInt != 0 || higher % userNumOneInt == 0 && higher % userNumTwoInt == 0);
+                // loop as long as "higher" mod both inputs is not zero or one last time if it is
+                } while (higher % userNumOneInt || userNumTwoInt != 0 || higher % userNumOneInt && userNumTwoInt == 0);
 
-                // tell user no negatives
+            // tell user no negatives
             } else {
                 std::cout << "You must use two positive integers.\n";
             }
